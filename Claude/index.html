@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse Agency — Marketing Digital que Transforma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#inicio" class="nav__logo">
+        <span class="logo__pulse">Pulse</span><span class="logo__agency">Agency</span>
+      </a>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#inicio" class="nav__link">Inicio</a></li>
+        <li><a href="#nosotros" class="nav__link">Sobre Nosotros</a></li>
+        <li><a href="#servicios" class="nav__link">Servicios</a></li>
+        <li><a href="#testimonios" class="nav__link">Testimonios</a></li>
+        <li><a href="#contacto" class="nav__link nav__link--cta">Contacto</a></li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="inicio">
+      <canvas class="hero__canvas" id="pulseCanvas"></canvas>
+      <div class="hero__content container">
+        <span class="hero__eyebrow">Marketing Digital de Impacto</span>
+        <h1 class="hero__title">
+          Tu marca,<br />
+          <em class="hero__title--accent">amplificada</em><br />
+          al máximo.
+        </h1>
+        <p class="hero__subtitle">
+          Conectamos marcas con audiencias reales a través de estrategias de branding, redes sociales y performance que generan resultados medibles.
+        </p>
+        <div class="hero__actions">
+          <a href="#servicios" class="btn btn--primary">Ver nuestros servicios</a>
+          <a href="#nosotros" class="btn btn--ghost">Conocer la agencia</a>
+        </div>
+      </div>
+      <div class="hero__scroll-indicator">
+        <span class="scroll-dot"></span>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE NOSOTROS ===================== -->
+    <section class="about" id="nosotros">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <span class="section__label">Sobre Nosotros</span>
+            <h2 class="section__title">Creemos que el marketing<br />debe <em>sentirse</em>.</h2>
+            <p class="about__lead">
+              Pulse Agency nació en 2016 con una convicción simple: las pequeñas y medianas empresas merecen estrategias de comunicación tan ambiciosas como las de las grandes marcas.
+            </p>
+            <p class="about__body">
+              Trabajamos como una extensión de tu equipo. Sin capas de burocracia, sin propuestas genéricas. Cada proyecto arranca desde cero: entendemos tu mercado, tu audiencia y tus objetivos antes de mover un pixel o escribir una palabra.
+            </p>
+            <p class="about__body">
+              Nuestra filosofía es simple: datos + creatividad = crecimiento real. Medimos todo, iteramos rápido y nunca dejamos de buscar la siguiente oportunidad para tu negocio.
+            </p>
+          </div>
+          <div class="about__stats reveal reveal--delay">
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="150">0</span>
+              <span class="stat-card__symbol">+</span>
+              <p class="stat-card__label">Clientes satisfechos</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="8">0</span>
+              <span class="stat-card__symbol"> años</span>
+              <p class="stat-card__label">De experiencia en el mercado</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="320">0</span>
+              <span class="stat-card__symbol">+</span>
+              <p class="stat-card__label">Campañas exitosas lanzadas</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="4.9">0</span>
+              <span class="stat-card__symbol">/5</span>
+              <p class="stat-card__label">Rating promedio de clientes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICIOS ===================== -->
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Servicios</span>
+          <h2 class="section__title">Lo que hacemos,<br />lo hacemos <em>muy bien</em>.</h2>
+          <p class="section__subtitle">Tres pilares estratégicos para transformar tu presencia digital de raíz.</p>
+        </div>
+        <div class="services__grid">
+
+          <div class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 24C16 19.58 19.58 16 24 16C28.42 16 32 19.58 32 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="4" fill="currentColor"/>
+                <path d="M24 8V12M24 36V40M8 24H12M36 24H40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Branding Estratégico</h3>
+            <p class="service-card__desc">
+              Construimos identidades de marca que trascienden un logo. Desde el posicionamiento y la voz hasta el sistema visual completo, creamos marcas que las personas recuerdan y eligen.
+            </p>
+            <ul class="service-card__list">
+              <li>Identidad visual y manual de marca</li>
+              <li>Posicionamiento y propuesta de valor</li>
+              <li>Naming y arquitectura de marca</li>
+            </ul>
+          </div>
+
+          <div class="service-card reveal reveal--delay">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="6" y="10" width="36" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 10V38M32 10V38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M6 20H42M6 28H42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Gestión de Redes Sociales</h3>
+            <p class="service-card__desc">
+              Manejamos tu presencia en redes con una estrategia de contenido que construye comunidad, genera conversación genuina y convierte seguidores en clientes leales.
+            </p>
+            <ul class="service-card__list">
+              <li>Estrategia de contenido mensual</li>
+              <li>Diseño y producción de piezas</li>
+              <li>Community management y analítica</li>
+            </ul>
+          </div>
+
+          <div class="service-card reveal reveal--delay-2">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M8 36L18 24L26 30L36 16L42 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M38 10H42V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="6" y="8" width="6" height="6" rx="1" fill="currentColor" opacity="0.4"/>
+                <rect x="6" y="34" width="36" height="2" rx="1" fill="currentColor" opacity="0.2"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Campañas de Performance</h3>
+            <p class="service-card__desc">
+              Diseñamos y optimizamos campañas pagas en Google, Meta y más, con un enfoque obsesivo en el ROI. Cada peso invertido tiene que rendir, y nos aseguramos de que así sea.
+            </p>
+            <ul class="service-card__list">
+              <li>Google Ads y Meta Ads</li>
+              <li>Optimización de conversión (CRO)</li>
+              <li>Reportes semanales de resultados</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIOS ===================== -->
+    <section class="testimonials" id="testimonios">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Testimonios</span>
+          <h2 class="section__title">Lo dicen quienes<br />ya dieron el paso.</h2>
+        </div>
+        <div class="testimonials__grid">
+
+          <div class="testimonial-card reveal">
+            <div class="testimonial-card__quote">
+              <svg viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 24V14.4C0 10.08 1.28 6.56 3.84 3.84C6.4 1.12 9.92 0 14.4 0V4.8C12.16 4.8 10.4 5.52 9.12 6.96C7.84 8.4 7.2 10.24 7.2 12.48H13.6V24H0ZM18.4 24V14.4C18.4 10.08 19.68 6.56 22.24 3.84C24.8 1.12 28.32 0 32 0V4.8C29.76 4.8 28 5.52 26.72 6.96C25.44 8.4 24.8 10.24 24.8 12.48H32V24H18.4Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <p class="testimonial-card__text">
+              Pulse transformó por completo la forma en que comunicamos nuestra marca. En seis meses triplicamos nuestra base de seguidores y, más importante, duplicamos las consultas entrantes. No es magia — es estrategia real.
+            </p>
+            <div class="testimonial-card__author">
+              <div class="author__avatar" aria-hidden="true">MR</div>
+              <div class="author__info">
+                <strong class="author__name">Martina Rodríguez</strong>
+                <span class="author__role">CEO — Terrapin Studio</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal--delay">
+            <div class="testimonial-card__quote">
+              <svg viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 24V14.4C0 10.08 1.28 6.56 3.84 3.84C6.4 1.12 9.92 0 14.4 0V4.8C12.16 4.8 10.4 5.52 9.12 6.96C7.84 8.4 7.2 10.24 7.2 12.48H13.6V24H0ZM18.4 24V14.4C18.4 10.08 19.68 6.56 22.24 3.84C24.8 1.12 28.32 0 32 0V4.8C29.76 4.8 28 5.52 26.72 6.96C25.44 8.4 24.8 10.24 24.8 12.48H32V24H18.4Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <p class="testimonial-card__text">
+              Lo que más valoro de Pulse es que hablan con datos, no con promesas. Antes de contratar preguntaban más que yo. Eso generó confianza. Hoy nuestra campaña de Google tiene un ROAS de 4.2 sostenido desde hace cinco meses.
+            </p>
+            <div class="testimonial-card__author">
+              <div class="author__avatar" aria-hidden="true">JL</div>
+              <div class="author__info">
+                <strong class="author__name">Javier López</strong>
+                <span class="author__role">Fundador — Muvit E-commerce</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal--delay-2">
+            <div class="testimonial-card__quote">
+              <svg viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 24V14.4C0 10.08 1.28 6.56 3.84 3.84C6.4 1.12 9.92 0 14.4 0V4.8C12.16 4.8 10.4 5.52 9.12 6.96C7.84 8.4 7.2 10.24 7.2 12.48H13.6V24H0ZM18.4 24V14.4C18.4 10.08 19.68 6.56 22.24 3.84C24.8 1.12 28.32 0 32 0V4.8C29.76 4.8 28 5.52 26.72 6.96C25.44 8.4 24.8 10.24 24.8 12.48H32V24H18.4Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <p class="testimonial-card__text">
+              Llevábamos años intentando construir presencia en Instagram sin resultados. En tres meses con Pulse, nuestro contenido empezó a viralizarse de forma orgánica y hoy tenemos lista de espera. Algo que nunca imaginamos posible.
+            </p>
+            <div class="testimonial-card__author">
+              <div class="author__avatar" aria-hidden="true">CS</div>
+              <div class="author__info">
+                <strong class="author__name">Carolina Sánchez</strong>
+                <span class="author__role">Directora Comercial — Bloom Wellness</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section class="contact" id="contacto">
+      <div class="container">
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <span class="section__label">Contacto</span>
+            <h2 class="section__title">¿Listos para<br />hacer <em>ruido</em>?</h2>
+            <p class="contact__body">
+              Contanos en qué estás trabajando y te respondemos en menos de 24 horas con ideas concretas. Sin reuniones interminables, sin propuestas genéricas.
+            </p>
+            <div class="contact__details">
+              <div class="contact__detail">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>hola@pulseagency.com</span>
+              </div>
+              <div class="contact__detail">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M22 16.92V19.92C22.0011 20.4853 21.7677 21.0268 21.3584 21.4151C20.9492 21.8034 20.3996 22.0069 19.836 21.98C16.7429 21.6316 13.7672 20.5499 11.155 18.82C8.72668 17.2407 6.67255 15.1866 5.093 12.758C3.358 10.136 2.27578 7.14823 1.933 4.04C1.90605 3.47832 2.10884 2.92985 2.49616 2.52069C2.88348 2.11152 3.42297 1.87781 3.987 1.88H6.987C7.98 1.8752 8.82668 2.56667 8.987 3.548C9.17527 4.71219 9.50009 5.84957 9.955 6.934C10.2229 7.59842 10.055 8.35249 9.533 8.844L8.263 10.114C9.73086 12.6309 11.7949 14.695 14.312 16.163L15.582 14.893C16.0739 14.371 16.828 14.2031 17.492 14.471C18.5768 14.9258 19.7143 15.2504 20.879 15.438C21.8715 15.6006 22.5696 16.4638 22.564 17.47L22 16.92Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>+54 11 4567-8900</span>
+              </div>
+              <div class="contact__detail">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Buenos Aires, Argentina</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact__form-wrapper reveal reveal--delay">
+            <form class="contact__form" id="contactForm" novalidate>
+              <div class="form__row">
+                <div class="form__group">
+                  <label for="name" class="form__label">Nombre completo</label>
+                  <input type="text" id="name" name="name" class="form__input" placeholder="Ana García" required />
+                </div>
+                <div class="form__group">
+                  <label for="email" class="form__label">Correo electrónico</label>
+                  <input type="email" id="email" name="email" class="form__input" placeholder="ana@empresa.com" required />
+                </div>
+              </div>
+              <div class="form__group">
+                <label for="subject" class="form__label">Asunto</label>
+                <input type="text" id="subject" name="subject" class="form__input" placeholder="¿En qué podemos ayudarte?" required />
+              </div>
+              <div class="form__group">
+                <label for="message" class="form__label">Mensaje</label>
+                <textarea id="message" name="message" class="form__textarea" rows="5" placeholder="Contanos sobre tu proyecto, tu empresa y tus objetivos..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">
+                <span class="btn__text">Enviar mensaje</span>
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <p class="form__success" id="formSuccess" role="status" aria-live="polite">¡Mensaje enviado! Te contactamos pronto.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#inicio" class="nav__logo">
+            <span class="logo__pulse">Pulse</span><span class="logo__agency">Agency</span>
+          </a>
+          <p class="footer__tagline">Marketing digital que genera resultados reales para negocios que quieren crecer.</p>
+        </div>
+        <div class="footer__nav">
+          <span class="footer__nav-title">Navegación</span>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Sobre Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer__social">
+          <span class="footer__nav-title">Seguinos</span>
+          <div class="social__links">
+            <a href="#" class="social__link" aria-label="Twitter / X de Pulse Agency">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" class="social__link" aria-label="Instagram de Pulse Agency">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" class="social__link" aria-label="LinkedIn de Pulse Agency">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Pulse Agency. Todos los derechos reservados.</p>
+        <p class="footer__legal"><a href="#">Política de privacidad</a> · <a href="#">Términos de uso</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

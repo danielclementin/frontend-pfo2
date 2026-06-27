@@ -23,7 +23,7 @@ Se diseñó y utilizó un único prompt inicial con especificaciones funcionales
 
 ### Link al deploy unificado
 
-*(Completar con la URL del proyecto desplegado.)*
+*https://frontend-pfo2-eight.vercel.app/*
 
 ## Prompt exacto utilizado:
 

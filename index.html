@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PFO 2 — Prompt Engineering en Agentes de IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f14;
+      --surface: #161a22;
+      --surface-hover: #1e2330;
+      --border: #252c3b;
+      --border-accent: #3b4fd1;
+      --text-primary: #eef0f6;
+      --text-secondary: #8a91a8;
+      --text-muted: #555e78;
+      --accent: #4f63e8;
+      --accent-light: #7b8ff0;
+      --accent-glow: rgba(79, 99, 232, 0.15);
+      --tag-bg: rgba(79, 99, 232, 0.1);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 1.25rem;
+    }
+
+    /* faint grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 680px;
+      z-index: 1;
+    }
+
+    /* subtle glow on top edge */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      border-radius: 100%;
+    }
+
+    /* ── header ── */
+    .tag {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      background: var(--tag-bg);
+      border: 1px solid rgba(79, 99, 232, 0.25);
+      border-radius: 99px;
+      padding: 4px 12px;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* ── divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 1.75rem 0;
+    }
+
+    /* ── metadata ── */
+    .meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 1.5rem;
+      margin-bottom: 0;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .meta-value {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    /* ── links section ── */
+    .links-title {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    .link-item:hover {
+      border-color: var(--border-accent);
+      background: var(--surface-hover);
+      transform: translateX(3px);
+    }
+
+    .link-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--tag-bg);
+      border: 1px solid rgba(79, 99, 232, 0.3);
+      color: var(--accent-light);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .link-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .link-label {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .link-sub {
+      font-size: 11.5px;
+      color: var(--text-secondary);
+      margin-top: 1px;
+    }
+
+    .link-arrow {
+      flex-shrink: 0;
+      color: var(--text-muted);
+      font-size: 16px;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .link-item:hover .link-arrow {
+      color: var(--accent-light);
+      transform: translateX(2px);
+    }
+
+    /* ── footer note ── */
+    .footer-note {
+      text-align: center;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 1.75rem;
+    }
+
+    @media (max-width: 480px) {
+      .meta { grid-template-columns: 1fr; }
+      .card { padding: 1.75rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+
+    <span class="tag">Práctica Formativa Obligatoria 2</span>
+    <h1>Prompt Engineering<br>en Agentes de IA</h1>
+    <p class="subtitle">Trabajo práctico de generación de landing pages mediante instrucciones para modelos de lenguaje.</p>
+
+    <div class="divider"></div>
+
+    <div class="meta">
+      <div class="meta-item">
+        <span class="meta-label">Estudiante</span>
+        <span class="meta-value">Daniel Clementín</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Comisión</span>
+        <span class="meta-value">D</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Ciclo lectivo</span>
+        <span class="meta-value">1er Cuatrimestre 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Asignatura</span>
+        <span class="meta-value">Desarrollo de Sistemas Web (Front End)</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="links-title">Accesos directos</p>
+    <nav class="links-list" aria-label="Accesos directos del proyecto">
+
+      <a class="link-item" href="prompt.txt" target="_blank" rel="noopener">
+        <div class="link-num">1</div>
+        <div class="link-body">
+          <div class="link-label">Prompt utilizado</div>
+          <div class="link-sub">Texto plano del prompt enviado a los agentes</div>
+        </div>
+        <span class="link-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="link-item" href="Claude/index.html" target="_blank" rel="noopener">
+        <div class="link-num">2</div>
+        <div class="link-body">
+          <div class="link-label">Landing Page — Claude</div>
+          <div class="link-sub">Agente: Claude · Modelo: Claude Sonnet</div>
+        </div>
+        <span class="link-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="link-item" href="Codex/index.html" target="_blank" rel="noopener">
+        <div class="link-num">3</div>
+        <div class="link-body">
+          <div class="link-label">Landing Page — Codex</div>
+          <div class="link-sub">Agente: Codex · Modelo: GPT-5.5</div>
+        </div>
+        <span class="link-arrow" aria-hidden="true">→</span>
+      </a>
+
+    </nav>
+
+  </main>
+
+  <p class="footer-note">Desarrollo de Sistemas Web · Front End · 2026</p>
+</body>
+</html>
